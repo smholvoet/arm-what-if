@@ -10,6 +10,7 @@ az group create --name rg-arm `
                 --location westeurope
 
 # Execute what-if operation on empty resource group
+# 👉 Shows that the storage account will be created from scratch
 az deployment group what-if --name 'initialDeploy' `
                             --resource-group rg-arm `
                             --template-file .\azuredeploy.json `
@@ -22,8 +23,9 @@ az deployment group create  --name 'initialDeploy' `
                             --parameters .\azuredeploy.parameters.json
 
 
-# Execute what-if operation again using updated template
-az deployment group create  --name 'updateStorageSKU' `
+# Execute what-if operation again, using an updated template this time
+# 👉 Shows that the displayName property will be updated
+az deployment group what-if --name 'updateStorageSKU' `
                             --resource-group rg-arm `
                             --template-file .\azuredeploy_update.json `
                             --parameters .\azuredeploy.parameters.json

@@ -16,13 +16,13 @@
         "type": "Microsoft.Storage/storageAccounts",
         "apiVersion": "2019-06-01",
         "tags": {
-            "displayName": "[parameters('storageAccountName')]"
+            "displayName": "sttest01randomname-update"
         },
         "location": "[resourceGroup().location]",
         "kind": "StorageV2",
         "sku": {
-            "name": "Standard_LRS",
-            "tier": "Standard"
+            "name": "Premium_LRS",
+            "tier": "Premium"
         }
     }],
     "outputs": {}
